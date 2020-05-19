@@ -5,20 +5,22 @@
 #              in "ToDoToDoList.txt" into a python Dictionary.
 #              Add the each dictionary "row" to a python list "table"
 # ChangeLog (Who,When,What):
-# RRoot,1.1.2030,Created started script
-# JTrinh, 05.12.2020, Added code to complete assignment 5 (steps 3 & 4)
-# JTrinh, 05.15.2020, Added code to steps 5-7
+# RRoot,1.1.2030,Created starter script
+# JTrinh, 05.12.2020, Added code to complete assignment 5 (steps 1, 3 & 4)
+# JTrinh, 05.14.2020, Added code to steps 5-7
 # JTrinh, 05.15.2020, deleted excessive comments/alternative code; basic functional script
+# JTrinh, 05.15.2020, added variables used in program to "Data" section
 # ------------------------------------------------------------------------ #
 
 # -- Data -- #
 # declare variables and constants
 objFile = "ToDoList.txt"   # An object that represents a file
-strData = ""  # A row of text data from the file
 dicRow = {}    # A row of data separated into elements of a dictionary {Task,Priority}
 lstTable = []  # A list that acts as a 'table' of rows
-strMenu = ""   # A menu of user options
 strChoice = "" # A Capture the user option selection
+strTask = "" # A string capture of task declared by user
+strPriority = "" # A string capture of priority declared by user
+ToDoFile = "" # Holds open text file
 
 
 # -- Processing -- #
@@ -59,12 +61,9 @@ while (True):
         print("Enter a task and level of priority:")
         strTask = input("Task: ").upper()
         strPriority = input("Priority (high, medium, low): ").lower()
-        # dicRow = {"Task":strTask, "Priority":strPriority}
         lstTable.append({"Task": strTask, "Priority": strPriority})
-        # lstTable += dicRow
         for row in lstTable:
             print(row["Task"] + ", " + row["Priority"])
-        #want to input "Add more?" code
         continue
     # Step 5 - Remove a new item from the list/Table
     elif (strChoice.strip() == '3'):
